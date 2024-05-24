@@ -31,6 +31,7 @@ BuildRequires:	qt6-linguist >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Obsoletes:	kf5-%{kfname} < %{version}
 Requires:	Qt6DBus >= %{qtver}
 Requires:	Qt6Widgets >= %{qtver}
 Requires:	Qt6Xml >= %{qtver}
@@ -53,6 +54,7 @@ XBEL format: http://pyxml.sourceforge.net/topics/xbel/
 Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
+Obsoletes:	kf5-%{kfname}-devel < %{version}
 Requires:	%{name} = %{version}-%{release}
 Requires:	Qt6Widgets-devel >= %{qtver}
 Requires:	Qt6Xml-devel >= %{qtver}
