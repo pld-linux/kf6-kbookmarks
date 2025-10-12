@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.18
+%define		kdeframever	6.19
 %define		qtver		5.15.2
 %define		kfname		kbookmarks
 
 Summary:	Web browser bookmark management
 Name:		kf6-%{kfname}
-Version:	6.18.0
+Version:	6.19.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	ba45e3051a690e54439dfb8b81f227d5
+# Source0-md5:	2fc87d6f5b6227542639af684f4efadd
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
@@ -31,7 +31,6 @@ BuildRequires:	qt6-linguist >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-#Obsoletes:	kf5-%{kfname} < %{version}
 Requires:	Qt6DBus >= %{qtver}
 Requires:	Qt6Widgets >= %{qtver}
 Requires:	Qt6Xml >= %{qtver}
@@ -42,6 +41,7 @@ Requires:	kf6-kconfigwidgets >= %{version}
 Requires:	kf6-kcoreaddons >= %{version}
 Requires:	kf6-kwidgetsaddons >= %{version}
 Requires:	kf6-kxmlgui >= %{version}
+#Obsoletes:	kf5-%{kfname} < %{version}
 %requires_eq_to Qt6Core Qt6Core-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,12 +55,12 @@ XBEL format: http://pyxml.sourceforge.net/topics/xbel/
 Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
-#Obsoletes:	kf5-%{kfname}-devel < %{version}
 Requires:	%{name} = %{version}-%{release}
 Requires:	Qt6Widgets-devel >= %{qtver}
 Requires:	Qt6Xml-devel >= %{qtver}
 Requires:	cmake >= 3.16
 Requires:	kf6-kwidgetsaddons-devel >= %{version}
+#Obsoletes:	kf5-%{kfname}-devel < %{version}
 
 %description devel
 Header files for %{kfname} development.
@@ -99,9 +99,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kfname}6_qt.lang
 %defattr(644,root,root,755)
 %doc README.md
-%attr(755,root,root) %{_libdir}/libKF6Bookmarks.so.*.*
+%{_libdir}/libKF6Bookmarks.so.*.*
 %ghost %{_libdir}/libKF6Bookmarks.so.6
-%attr(755,root,root) %{_libdir}/libKF6BookmarksWidgets.so.*.*
+%{_libdir}/libKF6BookmarksWidgets.so.*.*
 %ghost %{_libdir}/libKF6BookmarksWidgets.so.6
 %{_datadir}/qlogging-categories6/kbookmarks.categories
 %{_datadir}/qlogging-categories6/kbookmarks.renamecategories
