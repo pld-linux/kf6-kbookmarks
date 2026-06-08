@@ -51,6 +51,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 KBookmarks lets you access and manipulate bookmarks stored using the
 XBEL format: http://pyxml.sourceforge.net/topics/xbel/
 
+%description -l pl.UTF-8
+KBookrmarks pozwala czytać i modyfikować zakładki zapisane w formacie
+XBEL: http://pyxml.sourceforge.net/topics/xbel/
+
 %package devel
 Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
